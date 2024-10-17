@@ -28,8 +28,7 @@ class HomeFeedFragment : Fragment(R.layout.home_feed) {
     }
 
     private fun getPosts(): List<Post> {
-        val postsNumber = 10
-        return List(postsNumber) { index ->
+        return List(Random.nextInt(10)) { index ->
             Post(
                 id = index + 1,
                 username = getUsername(),

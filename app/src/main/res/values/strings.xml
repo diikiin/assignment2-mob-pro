@@ -3,4 +3,8 @@
     <string name="post_image">post_image</string>
     <string name="profile_picture">profile_picture</string>
     <string name="profile_post">profile_post</string>
+    <string name="search_users">Search Users</string>
+    <string name="select_image">Select Image</string>
+    <string name="enter_caption">Enter caption</string>
+    <string name="submit">Submit</string>
 </resources>

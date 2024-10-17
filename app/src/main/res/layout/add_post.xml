@@ -4,4 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/add_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/select_image"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <EditText
+        android:id="@+id/add_post_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_caption"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/add_post_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_marginTop="16dp" />
+
+
 </LinearLayout>

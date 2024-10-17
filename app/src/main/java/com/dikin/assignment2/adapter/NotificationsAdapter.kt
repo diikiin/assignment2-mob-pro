@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dikin.assignment2.R
 import com.dikin.assignment2.model.Notification
 
-class NotificationAdapter(private val notifications: List<Notification>) :
-    RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder>() {
+class NotificationsAdapter(private val notifications: List<Notification>) :
+    RecyclerView.Adapter<NotificationsAdapter.NotificationViewHolder>() {
 
     inner class NotificationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val messageTV = itemView.findViewById<TextView>(R.id.notification_message)

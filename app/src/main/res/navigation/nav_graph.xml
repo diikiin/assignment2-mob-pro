@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_feed_fragment">
+
+    <fragment
+        android:id="@+id/home_feed_fragment"
+        android:name="com.dikin.assignment2.fragment.HomeFeedFragment" />
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.dikin.assignment2.fragment.SearchFragment" />
+
+    <fragment
+        android:id="@+id/add_post_fragment"
+        android:name="com.dikin.assignment2.fragment.AddPostFragment" />
+
+    <fragment
+        android:id="@+id/notifications_fragment"
+        android:name="com.dikin.assignment2.fragment.NotificationsFragment" />
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.dikin.assignment2.fragment.ProfileFragment" />
+
+</navigation>

@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dikin.assignment2.R
-import com.dikin.assignment2.adapter.NotificationAdapter
+import com.dikin.assignment2.adapter.NotificationsAdapter
 import com.dikin.assignment2.model.Notification
 import kotlin.random.Random
 
-class NotificationFragment : Fragment(R.layout.notifications_notification) {
+class NotificationsFragment : Fragment(R.layout.notifications_notification) {
 
     private lateinit var rv: RecyclerView
-    private lateinit var adapter: NotificationAdapter
+    private lateinit var adapter: NotificationsAdapter
     private val notifications = getNotifications()
 
     override fun onCreateView(
@@ -30,7 +30,7 @@ class NotificationFragment : Fragment(R.layout.notifications_notification) {
         super.onViewCreated(view, savedInstanceState)
 
         rv = view.findViewById(R.id.notifications_rv)
-        adapter = NotificationAdapter(notifications)
+        adapter = NotificationsAdapter(notifications)
 
         rv.layoutManager = LinearLayoutManager(requireContext())
         rv.adapter = adapter

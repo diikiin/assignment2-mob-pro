@@ -64,7 +64,7 @@ class SearchFragment : Fragment(R.layout.search) {
         return List(Random.nextInt(5)) { _ ->
             User(
                 "D4C",
-                "../res/drawable/1.jpg",
+                "drawable/icon1.jpg",
                 "I love Android Studio!",
                 posts.size,
                 posts
@@ -97,11 +97,11 @@ class SearchFragment : Fragment(R.layout.search) {
 
     private fun getImageUrl(): String {
         val images = listOf(
-            "../res/drawable/1.jpg",
-            "../res/drawable/2.jpg",
+            "drawable/icon1.jpg",
+            "drawable/icon2.jpg",
             "../res/drawable/3.jpg",
             "../res/drawable/4.jpg",
-            "../res/drawable/5.jpg"
+            "drawable/icon5.jpg"
         )
         return images[Random.nextInt(images.size)]
     }

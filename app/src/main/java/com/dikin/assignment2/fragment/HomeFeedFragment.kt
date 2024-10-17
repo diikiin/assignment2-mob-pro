@@ -57,11 +57,11 @@ class HomeFeedFragment : Fragment(R.layout.home_feed) {
 
     private fun getImageUrl(): String {
         val images = listOf(
-            "../res/drawable/1.jpg",
-            "../res/drawable/2.jpg",
-            "../res/drawable/3.jpg",
-            "../res/drawable/4.jpg",
-            "../res/drawable/5.jpg"
+            "drawable/icon1.jpg",
+            "drawable/icon2.jpg",
+            "drawable/icon3.jpeg",
+            "drawable/icon4.jpeg",
+            "drawable/icon5.jpg"
         )
         return images[Random.nextInt(images.size)]
     }

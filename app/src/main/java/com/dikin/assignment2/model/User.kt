@@ -4,6 +4,12 @@ data class User(
     val username: String,
     val profilePictureUrl: Int,
     val bio: String,
-    val postsCount: Int,
-    val posts: List<Post>
-)
+    var postsCount: Int,
+    var posts: MutableList<Post>,
+    var notifications: MutableList<Notification>
+) {
+    fun addPost(post: Post) {
+        posts.add(post)
+        postsCount++
+    }
+}

@@ -49,7 +49,7 @@ class AddPostFragment : Fragment(R.layout.add_post) {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
+        if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
             imageUri = data.data
             imageIV.setImageURI(imageUri)
         }

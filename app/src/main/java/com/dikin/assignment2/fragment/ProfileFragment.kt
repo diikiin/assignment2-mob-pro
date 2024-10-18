@@ -12,11 +12,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.dikin.assignment2.MockDataProvider
 import com.dikin.assignment2.R
 import com.dikin.assignment2.adapter.ProfilePostAdapter
-import com.dikin.assignment2.model.Post
-import com.dikin.assignment2.model.User
-import kotlin.random.Random
 
 class ProfileFragment : Fragment(R.layout.profile) {
 
@@ -45,7 +43,7 @@ class ProfileFragment : Fragment(R.layout.profile) {
         postsCountTV = view.findViewById(R.id.profile_posts_count)
         postsRV = view.findViewById(R.id.profile_rv)
 
-        val user = getUser()
+        val user = MockDataProvider.getUser()
 
         usernameTV.text = user.username
         bioTV.text = user.bio
@@ -61,52 +59,4 @@ class ProfileFragment : Fragment(R.layout.profile) {
         postsRV.adapter = adapter
     }
 
-    private fun getUser(): User {
-        val posts = getPosts()
-        return User(
-            "D4C",
-            R.drawable.icon1,
-            "I love Android Studio!",
-            posts.size,
-            posts
-        )
-    }
-
-    private fun getPosts(): List<Post> {
-        return List(Random.nextInt(3, 10)) { index ->
-            Post(
-                id = index + 1,
-                username = "D4C",
-                imageUrl = getImageUrl(),
-                caption = getCaption(),
-                likes = getLikes()
-            )
-        }
-    }
-
-    private fun getCaption(): String {
-        val captions = listOf(
-            "Some another day",
-            "Happy Holidays!",
-            "Scary af",
-            "Why are you gay?",
-            "Ooooooo!"
-        )
-        return captions[Random.nextInt(captions.size)]
-    }
-
-    private fun getImageUrl(): Int {
-        val images = listOf(
-            R.drawable.icon1,
-            R.drawable.icon2,
-            R.drawable.icon3,
-            R.drawable.icon4,
-            R.drawable.icon5
-        )
-        return images[Random.nextInt(images.size)]
-    }
-
-    private fun getLikes(): Int {
-        return Random.nextInt(1001)
-    }
 }

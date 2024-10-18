@@ -10,8 +10,8 @@ object MockDataProvider {
     val users = getAllUsers()
     val posts = getAllPosts()
 
-    fun getUser(): User {
-        return users[Random.nextInt(users.size)]
+    fun getUser(position: Int): User {
+        return users[position]
     }
 
     private fun getAllUsers(): List<User> {
@@ -75,6 +75,13 @@ object MockDataProvider {
             R.drawable.icon5
         )
         return images[Random.nextInt(images.size)]
+    }
+
+    fun getImageUrl(hashcode: Int): Int {
+        return if (hashcode % 2 == 0)
+            R.drawable.icon2
+        else
+            R.drawable.icon3
     }
 
     private fun getLikes(): Int {

@@ -9,6 +9,7 @@ data class User(
     var notifications: MutableList<Notification>
 ) {
     fun addPost(post: Post) {
+        post.username = username
         posts.add(post)
         postsCount++
     }

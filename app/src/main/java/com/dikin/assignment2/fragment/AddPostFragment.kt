@@ -12,7 +12,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.dikin.assignment2.MockDataProvider
 import com.dikin.assignment2.R
+import com.dikin.assignment2.model.Post
 
 class AddPostFragment : Fragment(R.layout.add_post) {
 
@@ -21,6 +23,7 @@ class AddPostFragment : Fragment(R.layout.add_post) {
     private lateinit var submitButton: Button
     private val PICK_IMAGE = 1
     private var imageUri: Uri? = null
+    private val user = MockDataProvider.getUser(1)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,6 +67,13 @@ class AddPostFragment : Fragment(R.layout.add_post) {
         val caption = captionET.text.toString()
 
         if (imageUri != null && caption.isNotEmpty()) {
+            user.addPost(
+                Post(
+                    id = 10,
+                    imageUrl = MockDataProvider.getImageUrl(imageUri.hashCode()),
+                    caption = caption
+                )
+            )
             println("Uploading post with caption: $caption and image URI: $imageUri")
             imageIV.setImageResource(0)
             captionET.text.clear()

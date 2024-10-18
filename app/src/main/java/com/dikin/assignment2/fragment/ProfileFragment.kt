@@ -43,7 +43,7 @@ class ProfileFragment : Fragment(R.layout.profile) {
         postsCountTV = view.findViewById(R.id.profile_posts_count)
         postsRV = view.findViewById(R.id.profile_rv)
 
-        val user = MockDataProvider.getUser()
+        val user = MockDataProvider.getUser(1)
 
         usernameTV.text = user.username
         bioTV.text = user.bio

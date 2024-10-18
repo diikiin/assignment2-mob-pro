@@ -30,7 +30,11 @@ class HomeFeedAdapter(private val posts: List<Post>) :
                 .load(post.imageUrl)
                 .into(imageIV)
 
-            itemView.setOnClickListener {
+            likesTV.setOnClickListener {
+                post.like()
+                likesTV.text = "${post.likes} likes"
+            }
+            imageIV.setOnClickListener {
                 post.like()
                 likesTV.text = "${post.likes} likes"
             }

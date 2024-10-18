@@ -28,7 +28,7 @@ class NotificationsFragment : Fragment(R.layout.notifications_notification) {
         super.onViewCreated(view, savedInstanceState)
 
         rv = view.findViewById(R.id.notifications_rv)
-        adapter = NotificationsAdapter(MockDataProvider.getUser().notifications)
+        adapter = NotificationsAdapter(MockDataProvider.getUser(1).notifications)
 
         rv.layoutManager = LinearLayoutManager(context)
         rv.adapter = adapter

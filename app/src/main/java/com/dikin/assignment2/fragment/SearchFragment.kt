@@ -37,7 +37,7 @@ class SearchFragment : Fragment(R.layout.search) {
         searchET = view.findViewById(R.id.search_et)
         searchRV = view.findViewById(R.id.search_rv)
 
-        adapter = SearchAdapter(users)
+        adapter = SearchAdapter()
         searchRV.layoutManager = LinearLayoutManager(context)
         searchRV.adapter = adapter
 
@@ -53,23 +53,25 @@ class SearchFragment : Fragment(R.layout.search) {
     }
 
     private fun filterResults(query: String) {
-        val filteredResults = users.filter { user ->
-            user.username.contains(query, ignoreCase = true)
+        if (query.isNotEmpty()) {
+            val filteredResults = users.filter { user ->
+                user.username.contains(query, ignoreCase = true)
+            }
+            adapter.updateUsers(filteredResults)
+        } else {
+            adapter.updateUsers(emptyList())
         }
-        adapter.updateUsers(filteredResults)
     }
 
     private fun getUsers(): List<User> {
         val posts = getPosts()
-        return List(Random.nextInt(5)) { _ ->
-            User(
-                "D4C",
-                R.drawable.icon1,
-                "I love Android Studio!",
-                posts.size,
-                posts
-            )
-        }
+        return listOf(
+            User("lazy69", R.drawable.icon1, "The Lovers", posts.size, posts),
+            User("babysitter", R.drawable.icon2, "The World", posts.size, posts),
+            User("@$$0", R.drawable.icon3, "Strength", posts.size, posts),
+            User("D4C", R.drawable.icon4, "Hermit Purple", posts.size, posts),
+            User("metallica", R.drawable.icon5, "Hierophant Green", posts.size, posts)
+        )
     }
 
     private fun getPosts(): List<Post> {

@@ -9,9 +9,9 @@ import com.dikin.assignment2.R
 import com.dikin.assignment2.model.Notification
 
 class NotificationsAdapter(private val notifications: List<Notification>) :
-    RecyclerView.Adapter<NotificationsAdapter.NotificationViewHolder>() {
+    RecyclerView.Adapter<NotificationsAdapter.NotificationsViewHolder>() {
 
-    inner class NotificationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class NotificationsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val messageTV = itemView.findViewById<TextView>(R.id.notification_message)
         private val datetimeTV = itemView.findViewById<TextView>(R.id.notification_datetime)
 
@@ -21,13 +21,14 @@ class NotificationsAdapter(private val notifications: List<Notification>) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationsViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.notifications, parent, false)
-        return NotificationViewHolder(view)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.notifications_notification, parent, false)
+        return NotificationsViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: NotificationViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NotificationsViewHolder, position: Int) {
         holder.bind(notifications[position])
     }
 

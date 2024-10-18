@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".fragment.SearchFragment">
 
-    <SearchView
-        android:id="@+id/search_sv"
+    <EditText
+        android:id="@+id/search_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/search_users"
@@ -24,6 +23,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_sv" />
+        app:layout_constraintTop_toBottomOf="@+id/search_et" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

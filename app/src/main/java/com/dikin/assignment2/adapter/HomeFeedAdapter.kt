@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dikin.assignment2.R
 import com.dikin.assignment2.model.Post
-import java.io.File
 
 class HomeFeedAdapter(private val posts: List<Post>) :
     RecyclerView.Adapter<HomeFeedAdapter.PostViewHolder>() {
@@ -28,7 +27,7 @@ class HomeFeedAdapter(private val posts: List<Post>) :
             likesTV.text = "${post.likes} likes"
 
             Glide.with(itemView.context)
-                .load(File(post.imageUrl))
+                .load(post.imageUrl)
                 .into(imageIV)
 
             itemView.setOnClickListener {

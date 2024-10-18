@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dikin.assignment2.R
 import com.dikin.assignment2.model.User
-import java.io.File
 
 class SearchAdapter(private var users: List<User>) :
     RecyclerView.Adapter<SearchAdapter.UserViewHolder>() {
@@ -26,7 +25,7 @@ class SearchAdapter(private var users: List<User>) :
             bioTV.text = user.bio
 
             Glide.with(itemView.context)
-                .load(File(user.profilePictureUrl))
+                .load(user.profilePictureUrl)
                 .into(profilePictureIV)
         }
     }

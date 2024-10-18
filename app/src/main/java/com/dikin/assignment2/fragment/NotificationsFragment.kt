@@ -32,14 +32,13 @@ class NotificationsFragment : Fragment(R.layout.notifications_notification) {
         rv = view.findViewById(R.id.notifications_rv)
         adapter = NotificationsAdapter(notifications)
 
-        rv.layoutManager = LinearLayoutManager(requireContext())
+        rv.layoutManager = LinearLayoutManager(context)
         rv.adapter = adapter
-
     }
 
     private fun getNotifications(): List<Notification> {
-        return List(Random.nextInt(10)) { _ ->
-            Notification(getMessage(), getDatetime())
+        return List(Random.nextInt(1, 10)) { index ->
+            Notification(index + 1, getMessage(), getDatetime())
         }
     }
 

@@ -34,7 +34,7 @@ class SearchFragment : Fragment(R.layout.search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        searchET = view.findViewById(R.id.search_sv)
+        searchET = view.findViewById(R.id.search_et)
         searchRV = view.findViewById(R.id.search_rv)
 
         adapter = SearchAdapter(users)
@@ -64,7 +64,7 @@ class SearchFragment : Fragment(R.layout.search) {
         return List(Random.nextInt(5)) { _ ->
             User(
                 "D4C",
-                "drawable/icon1.jpg",
+                R.drawable.icon1,
                 "I love Android Studio!",
                 posts.size,
                 posts
@@ -95,13 +95,13 @@ class SearchFragment : Fragment(R.layout.search) {
         return captions[Random.nextInt(captions.size)]
     }
 
-    private fun getImageUrl(): String {
+    private fun getImageUrl(): Int {
         val images = listOf(
-            "drawable/icon1.jpg",
-            "drawable/icon2.jpg",
-            "../res/drawable/3.jpg",
-            "../res/drawable/4.jpg",
-            "drawable/icon5.jpg"
+            R.drawable.icon1,
+            R.drawable.icon2,
+            R.drawable.icon3,
+            R.drawable.icon4,
+            R.drawable.icon5
         )
         return images[Random.nextInt(images.size)]
     }

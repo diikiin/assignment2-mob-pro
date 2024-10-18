@@ -17,7 +17,7 @@ class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
-    private val PERMISSION_REQUEST_CODE = 112;
+    private val PERMISSION_REQUEST_CODE = 112
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

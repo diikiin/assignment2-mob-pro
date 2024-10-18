@@ -8,6 +8,7 @@
         android:id="@+id/profile_post_image"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_margin="1dp"
         android:contentDescription="@string/profile_post"
         android:scaleType="centerCrop" />
 

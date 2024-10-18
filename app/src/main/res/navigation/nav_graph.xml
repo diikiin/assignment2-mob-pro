@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/home_feed_fragment">
 
     <fragment
         android:id="@+id/home_feed_fragment"
-        android:name="com.dikin.assignment2.fragment.HomeFeedFragment" />
+        android:name="com.dikin.assignment2.fragment.HomeFeedFragment"
+        tools:layout="@layout/home_feed" />
 
     <fragment
         android:id="@+id/search_fragment"
-        android:name="com.dikin.assignment2.fragment.SearchFragment" />
+        android:name="com.dikin.assignment2.fragment.SearchFragment"
+        tools:layout="@layout/search" />
 
     <fragment
         android:id="@+id/add_post_fragment"
-        android:name="com.dikin.assignment2.fragment.AddPostFragment" />
+        android:name="com.dikin.assignment2.fragment.AddPostFragment"
+        tools:layout="@layout/add_post" />
 
     <fragment
         android:id="@+id/notifications_fragment"
-        android:name="com.dikin.assignment2.fragment.NotificationsFragment" />
+        android:name="com.dikin.assignment2.fragment.NotificationsFragment"
+        tools:layout="@layout/notifications" />
 
     <fragment
         android:id="@+id/profile_fragment"
-        android:name="com.dikin.assignment2.fragment.ProfileFragment" />
+        android:name="com.dikin.assignment2.fragment.ProfileFragment"
+        tools:layout="@layout/profile" />
 
 </navigation>

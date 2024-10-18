@@ -34,7 +34,7 @@ class SearchFragment : Fragment(R.layout.search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        searchET = view.findViewById(R.id.search_edit_text)
+        searchET = view.findViewById(R.id.search_sv)
         searchRV = view.findViewById(R.id.search_rv)
 
         adapter = SearchAdapter(users)

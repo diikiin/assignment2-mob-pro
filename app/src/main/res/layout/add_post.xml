@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.AddPostFragment">
 
     <ImageView
         android:id="@+id/add_post_image"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@android:color/darker_gray"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/select_image"
         android:layout_gravity="center"
-        android:padding="16dp"
+        android:background="@android:color/darker_gray"
         android:clickable="true"
-        android:focusable="true" />
+        android:contentDescription="@string/select_image"
+        android:focusable="true"
+        android:padding="16dp"
+        android:scaleType="centerCrop" />
 
     <EditText
         android:id="@+id/add_post_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_caption"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:hint="@string/enter_caption" />
 
     <Button
         android:id="@+id/add_post_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submit"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:text="@string/submit" />
 
 
 </LinearLayout>

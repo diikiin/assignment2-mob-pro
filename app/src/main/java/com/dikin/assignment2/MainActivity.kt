@@ -1,41 +1,39 @@
 package com.dikin.assignment2
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.ui.setupWithNavController
+import com.dikin.assignment2.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
 
+class MainActivity : FragmentActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+
+    private val PERMISSION_REQUEST_CODE = 112;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
-
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        NavigationUI.setupWithNavController(bottomNavigationView, navController)
-
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home_feed_fragment,
-                R.id.search_fragment,
-                R.id.add_post_fragment,
-                R.id.notifications_fragment,
-                R.id.profile_fragment -> {
-                    navController.navigate(item.itemId)
-                    true
-                }
-
-                else -> false
+        if (Build.VERSION.SDK_INT > 32) {
+            if (!shouldShowRequestPermissionRationale("112")) {
+                getNotificationPermission()
             }
         }
+
+        val navHostFragment = binding.navHostFragment.getFragment<NavHostFragment>()
+        navController = navHostFragment.navController
+
+        binding.bottomNavigation.setupWithNavController(navController)
     }
 
     override fun onBackPressed() {
@@ -43,6 +41,40 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         } else {
             navController.popBackStack()
+        }
+    }
+
+    fun getNotificationPermission() {
+        try {
+            if (Build.VERSION.SDK_INT > 33) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    PERMISSION_REQUEST_CODE
+                )
+            }
+        } catch (e: Exception) {
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        when (requestCode) {
+            PERMISSION_REQUEST_CODE -> {
+                if (grantResults.isNotEmpty() &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED
+                ) {
+                    // allow
+                } else {
+                    //deny
+                }
+                return
+            }
         }
     }
 }

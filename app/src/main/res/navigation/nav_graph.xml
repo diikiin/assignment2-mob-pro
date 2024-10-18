@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/home_feed_fragment"
         android:name="com.dikin.assignment2.fragment.HomeFeedFragment"
-        tools:layout="@layout/home_feed" />
+        tools:layout="@layout/home_feed">
+        <action
+            android:id="@+id/toProfileFragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/search_fragment"
